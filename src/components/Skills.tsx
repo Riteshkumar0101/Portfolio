@@ -1,8 +1,6 @@
-
 import React from 'react';
 import { cn } from '../lib/utils';
-import { 
-  Code2,
+import {
   FileCode,
   TestTube,
   Github
@@ -21,47 +19,47 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Languages",
     skills: [
-      { 
-        name: "C++", 
+      {
+        name: "C++",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-        isCustomIcon: true 
+        isCustomIcon: true
       },
-      { 
-        name: "Java", 
+      {
+        name: "Java",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
         isCustomIcon: true
       },
-      { 
-        name: "Python", 
+      {
+        name: "Python",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
         isCustomIcon: true
       },
-      { 
-        name: "C", 
+      {
+        name: "C",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
-        isCustomIcon: true 
+        isCustomIcon: true
       },
     ]
   },
   {
     title: "Frameworks",
     skills: [
-      { 
-        name: "HTML", 
+      {
+        name: "HTML",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-        isCustomIcon: true 
+        isCustomIcon: true
       },
-      { 
-        name: "CSS", 
+      {
+        name: "CSS",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-        isCustomIcon: true 
+        isCustomIcon: true
       },
-      { 
-        name: "JUnit", 
+      {
+        name: "JUnit",
         icon: TestTube
       },
-      { 
-        name: "JMeter", 
+      {
+        name: "JMeter",
         icon: FileCode
       },
     ]
@@ -69,33 +67,33 @@ const skillCategories: SkillCategory[] = [
   {
     title: "Tools & Platforms",
     skills: [
-      { 
-        name: "Selenium", 
+      {
+        name: "Selenium",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg",
-        isCustomIcon: true 
+        isCustomIcon: true
       },
-      { 
-        name: "Docker", 
+      {
+        name: "Docker",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
         isCustomIcon: true
       },
-      { 
-        name: "Eclipse", 
+      {
+        name: "Eclipse",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg",
-        isCustomIcon: true 
+        isCustomIcon: true
       },
-      { 
-        name: "AWS", 
+      {
+        name: "AWS",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-        isCustomIcon: true 
+        isCustomIcon: true
       },
-      { 
-        name: "Maven", 
+      {
+        name: "Maven",
         icon: "https://maven.apache.org/images/maven-logo-black-on-white.png",
-        isCustomIcon: true 
+        isCustomIcon: true
       },
-      { 
-        name: "TestNG", 
+      {
+        name: "TestNG",
         icon: Github
       },
     ]
@@ -104,32 +102,36 @@ const skillCategories: SkillCategory[] = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20">
-      <div className="section-container">
-        <h2 className="text-3xl font-bold text-gray-dark mb-4 text-center">My Skills</h2>
-        <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+    <section id="skills" className="py-20 bg-white">
+      <div className="section-container px-4 max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-4">My Skills</h2>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           I've worked with a variety of programming languages, frameworks, and tools throughout my academic and personal projects.
         </p>
 
-        <div className="space-y-12">
-          {skillCategories.map((category, idx) => (
-            <div key={category.title} className={cn(
-              "animate-fade-in opacity-0",
-              { "animation-delay-200": idx === 1, "animation-delay-400": idx === 2 }
-            )}>
-              <h3 className="text-xl font-semibold text-blue mb-6">{category.title}</h3>
+        <div className="space-y-16">
+          {skillCategories.map((category) => (
+            <div key={category.title}>
+              <h3 className="text-xl font-semibold text-blue-600 mb-6">{category.title}</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="flex flex-col items-center">
-                    <div className="skill-icon mb-3 flex items-center justify-center">
+                  <div
+                    key={skill.name}
+                    className="flex flex-col items-center hover:scale-105 transition-transform duration-300"
+                  >
+                    <div className="mb-3 flex items-center justify-center w-12 h-12">
                       {skill.isCustomIcon ? (
-                        <img src={skill.icon as string} alt={skill.name} className="w-8 h-8" />
+                        <img
+                          src={skill.icon as string}
+                          alt={skill.name}
+                          className="w-10 h-10 object-contain"
+                        />
                       ) : (
-                        // @ts-ignore - icon component type
-                        <skill.icon className="w-8 h-8" />
+                        // @ts-ignore - handles Lucide icons
+                        <skill.icon className="w-10 h-10 text-blue-500" />
                       )}
                     </div>
-                    <span className="text-gray-dark text-sm font-medium">{skill.name}</span>
+                    <span className="text-sm font-medium text-gray-800 text-center">{skill.name}</span>
                   </div>
                 ))}
               </div>
