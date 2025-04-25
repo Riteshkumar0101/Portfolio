@@ -22,7 +22,7 @@ const Contact = () => {
   });
 
   const { submit } = useWeb3Forms({
-    access_key: 'YOUR_ACCESS_KEY_HERE', // Replace with your actual Web3Forms access key
+    access_key: '22e634b5-557a-47d1-8c6b-9a3f43c6a602', // Replace with your actual Web3Forms access key
     settings: {
       from_name: 'Portfolio Contact Form',
       subject: 'New Contact Message from Portfolio',

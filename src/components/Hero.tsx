@@ -47,13 +47,13 @@ const Hero = () => {
         </div>
 
         <div className="hidden md:block animate-fade-in-left">
-          <div className="relative">
+          <div className="relative w-[320px] h-[400px] mx-auto">
             <div className="absolute -inset-0.5 bg-gradient-to-br from-blue to-blue-light rounded-2xl blur opacity-30"></div>
-            <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl w-full h-full">
               <img 
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+                src="/my pic.jpg" 
                 alt="Developer workspace" 
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover rounded-2xl"
               />
             </div>
           </div>
